@@ -6,7 +6,7 @@
 
 Open and edit the files in your Nextcloud with [GridCraft](https://github.com/storytold/gridcraft), the open-source, Rust-native spreadsheet app, without leaving the browser.
 
-- **Edit in GridCraft** appears in the Files action menu of every Excel (.xlsx, .xlsm, .xlsb, .xltx, .xltm), OpenDocument (.ods), CSV and TSV spreadsheet you can read.
+- **Edit in GridCraft** appears in the Files action menu of every Excel (.xlsx, .xlsm, .xlsb, .xls, .xltx, .xltm), OpenDocument (.ods), CSV and TSV spreadsheet you can read.
 - **Save** (Ctrl/⌘+S) writes an .xlsx workbook back to Nextcloud, and Nextcloud keeps the previous state as a file version. A workbook opened from another format is saved as .xlsx: the first time, you pick the name and folder (it's offered next to the original), and later saves go to that file.
 - **Export as PDF** asks for a name and folder in your Nextcloud the first time.
 - If someone else changes the file while you have it open, saving asks whether to replace their version or save a copy.
@@ -97,7 +97,7 @@ Every new version also goes to [nextcloud_plugins](https://github.com/CyberFox-8
 
 - GridCraft is young; see its [roadmap](https://github.com/storytold/gridcraft/blob/main/ROADMAP.md) for what's still missing.
 - One person edits at a time. There is no live co-editing; concurrent saves are caught and you choose what happens.
-- In the browser GridCraft saves workbooks as .xlsx. A spreadsheet in another format (.xlsm, .xlsb, .xltx, .xltm, .ods, CSV, TSV) is saved as a new .xlsx file and the original stays as it is.
+- In the browser GridCraft saves workbooks as .xlsx. A spreadsheet in another format (.xls, .xlsm, .xlsb, .xltx, .xltm, .ods, CSV, TSV) is saved as a new .xlsx file and the original stays as it is.
 - GridCraft doesn't run or keep VBA macros: it tells you when it drops them while opening a file.
 - In the browser, **Save As** stores the workbook like **Save**, and **Share › Save a Copy** isn't available; to keep a copy under another name, copy the file in Files first.
 

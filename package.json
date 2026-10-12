@@ -1,6 +1,6 @@
 {
   "name": "integration_gridcraft",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "description": "Edit Excel spreadsheets in Nextcloud with GridCraft",
   "license": "AGPL-3.0-or-later",

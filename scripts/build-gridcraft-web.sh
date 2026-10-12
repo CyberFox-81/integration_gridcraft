@@ -23,7 +23,7 @@
 set -euo pipefail
 
 APP_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-GRIDCRAFT_REF="${GRIDCRAFT_REF:-9f896c1249f40d18bf182199dc03042959be5f3f}"
+GRIDCRAFT_REF="${GRIDCRAFT_REF:-3926d21aa9a79d272b9f71ae60d67d7d7e5bd2c2}"
 SRC="${1:-$APP_DIR/build/gridcraft}"
 PATCH="$APP_DIR/patches/gridcraft-nextcloud.patch"
 OUT="$APP_DIR/web"
@@ -35,9 +35,12 @@ if [ ! -e "$SRC/.git" ]; then
 fi
 
 if grep -rq 'gridcraft:ready' "$SRC/apps/gridcraft-web/src"; then
-	echo "bridge patch already applied"
-else
+	echo "GridCraft has the embedding bridge"
+elif [ -s "$PATCH" ]; then
 	git -C "$SRC" apply "$PATCH"
+else
+	echo "error: this GridCraft has no embedding bridge, and there is no patch to add it" >&2
+	exit 1
 fi
 
 cargo_args=(build --profile release -p gridcraft-web --target wasm32-unknown-unknown)

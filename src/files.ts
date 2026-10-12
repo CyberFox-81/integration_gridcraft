@@ -25,10 +25,11 @@ const MIME_TYPES = new Set([
 	'application/vnd.oasis.opendocument.spreadsheet',
 	'text/csv',
 	'text/tab-separated-values',
+	'application/vnd.ms-excel',
 ])
 
 /** Extensions GridCraft opens whatever their MIME type; keep in sync with Application::EXTENSIONS. */
-const EXTENSIONS = new Set(['xlsx', 'xltx', 'xlsm', 'xltm', 'xlsb', 'ods', 'csv', 'tsv'])
+const EXTENSIONS = new Set(['xlsx', 'xltx', 'xlsm', 'xltm', 'xlsb', 'ods', 'csv', 'tsv', 'xls'])
 
 /**
  * A file GridCraft opens, in the user's own file tree (not the trash bin, versions or a

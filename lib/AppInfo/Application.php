@@ -32,6 +32,7 @@ class Application extends App implements IBootstrap {
 		'application/vnd.oasis.opendocument.spreadsheet',
 		'text/csv',
 		'text/tab-separated-values',
+		'application/vnd.ms-excel',
 	];
 
 	/**
@@ -47,6 +48,7 @@ class Application extends App implements IBootstrap {
 		'ods',
 		'csv',
 		'tsv',
+		'xls',
 	];
 
 	/** Whether GridCraft opens a file with this name and MIME type. */
