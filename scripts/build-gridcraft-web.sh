@@ -23,7 +23,7 @@
 set -euo pipefail
 
 APP_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-GRIDCRAFT_REF="${GRIDCRAFT_REF:-3926d21aa9a79d272b9f71ae60d67d7d7e5bd2c2}"
+GRIDCRAFT_REF="${GRIDCRAFT_REF:-fc45b7f6d8ab79ef20f74e3c8347a2fd731e6af5}"
 SRC="${1:-$APP_DIR/build/gridcraft}"
 PATCH="$APP_DIR/patches/gridcraft-nextcloud.patch"
 OUT="$APP_DIR/web"
