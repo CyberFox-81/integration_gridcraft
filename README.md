@@ -48,13 +48,13 @@ Files ── "Edit in GridCraft" ──▶ /apps/integration_gridcraft/edit/{fil
 
 The editor page downloads the file over WebDAV and passes it to GridCraft with `postMessage`. When you save, GridCraft passes the bytes back and the page uploads them with `If-Match`, so a newer version on the server is never overwritten without asking. A save in a format the opened file isn't in, and an export, ask for a name and folder with Nextcloud's own folder picker the first time; later saves under the same name go to the same file. The frame page is the only one whose Content Security Policy allows compiling WebAssembly.
 
-GridCraft's browser build saves by downloading a file. `patches/gridcraft-nextcloud.patch` adds an opt-in embedding bridge (`?host=parent`) to its web shell; the protocol is in [web/README.md](web/README.md). It is meant to be proposed upstream, so a future official GridCraft build can be used as is.
+GridCraft has the opt-in embedding bridge (`?host=parent`) this app uses since [storytold/gridcraft#237](https://github.com/storytold/gridcraft/pull/237), so the official GridCraft build is used as is; the protocol is in [web/README.md](web/README.md).
 
 ## Build from source
 
 ```sh
 make js      # npm ci && vite build → js/
-make wasm    # clone GridCraft, apply the patch, build → web/   (needs Rust, see below)
+make wasm    # clone GridCraft, build → web/   (needs Rust, see below)
 make dist    # → build/dist/integration_gridcraft-<version>.tar.gz
 ```
 
