@@ -21,7 +21,7 @@ Started with `?host=parent` inside an iframe, GridCraft talks to its parent wind
 |---|---|---|---|
 | `gridcraft:ready` | GridCraft → parent | `version` | The app is listening; send a file now. |
 | `gridcraft:open` | parent → GridCraft | `name`, `bytes` (`ArrayBuffer` or `Uint8Array`) | Open this file, as File › Open would. |
-| `gridcraft:save` | GridCraft → parent | `name`, `bytes` (transferred `ArrayBuffer`) | A file GridCraft would otherwise download: Save, Save As or Export. `name` is a file name, or a path the parent picked. The parent stores the file and reports success or failure itself. |
+| `gridcraft:save` | GridCraft → parent | `name`, `bytes` (transferred `ArrayBuffer`), `saveAs` (boolean, optional) | A file GridCraft would otherwise download: Save, Save As or Export. `name` is a file name, or a path the parent picked. With `saveAs: true` the parent asks where to keep it, even under a name it saved before, and that file becomes the workbook's file. The parent stores the file and reports success or failure itself. |
 | `gridcraft:dirty` | GridCraft → parent | `dirty` (boolean) | Unsaved changes appeared or went away. |
 | `gridcraft:failed` | GridCraft → parent | `error` | The app couldn't start (for example, no WebGPU or WebGL2). |
 
